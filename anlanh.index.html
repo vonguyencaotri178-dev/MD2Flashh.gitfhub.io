@@ -1,0 +1,106 @@
+import { Link } from "react-router-dom";
+import { MessageCircle, Shield, BookOpen, Heart, Users } from "lucide-react";
+
+const Index = () => {
+  return (
+    <div className="min-h-[calc(100vh-57px)]">
+      {/* Hero with decorative background */}
+      <section className="relative overflow-hidden bg-gradient-hero px-4 pb-16 pt-20 text-center">
+        {/* Decorative floating shapes */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -left-20 -top-20 h-72 w-72 animate-breathe rounded-full bg-calm-lavender/40 blur-3xl" />
+          <div className="absolute -right-16 top-1/3 h-56 w-56 animate-breathe rounded-full bg-calm-blue/40 blur-3xl" style={{ animationDelay: "2s" }} />
+          <div className="absolute bottom-0 left-1/3 h-48 w-48 animate-breathe rounded-full bg-calm-sage/30 blur-3xl" style={{ animationDelay: "3s" }} />
+          <div className="absolute right-1/4 top-10 h-3 w-3 animate-pulse-gentle rounded-full bg-primary/30" />
+          <div className="absolute left-1/4 top-1/2 h-2 w-2 animate-pulse-gentle rounded-full bg-primary/20" style={{ animationDelay: "1s" }} />
+          <div className="absolute bottom-1/4 right-1/3 h-4 w-4 animate-pulse-gentle rounded-full bg-primary/20" style={{ animationDelay: "2.5s" }} />
+        </div>
+
+        <div className="relative mx-auto max-w-2xl">
+          <div className="mb-6 inline-flex animate-breathe rounded-full bg-calm-lavender p-4">
+            <Heart className="h-8 w-8 text-primary" />
+          </div>
+          <h1 className="mb-4 font-serif text-5xl leading-tight text-foreground sm:text-6xl">
+            Bạn ổn không?
+            <br />
+            <span className="text-primary">Mình ở đây, kể cho mình nghe đi.</span>
+          </h1>
+          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
+            Không cần đăng ký, không ai biết bạn là ai. 
+            Chỉ cần bạn muốn nói — mình sẽ lắng nghe.
+          </p>
+          <Link
+            to="/chat"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-base font-medium text-primary-foreground shadow-soft transition-all hover:scale-105 hover:shadow-lg active:scale-95"
+          >
+            <MessageCircle className="h-5 w-5" />
+            Bắt đầu trò chuyện
+          </Link>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="relative mx-auto max-w-4xl px-4 py-16">
+        <div className="grid gap-6 sm:grid-cols-3">
+          <div className="rounded-2xl bg-calm-lavender p-6 shadow-card">
+            <MessageCircle className="mb-3 h-6 w-6 text-primary" />
+            <h3 className="mb-2 font-serif text-xl text-foreground">Trò chuyện AI</h3>
+            <p className="text-base text-muted-foreground">
+              Như nói chuyện với một người bạn thật sự — chân thành, không phán xét.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-calm-blue p-6 shadow-card">
+            <Shield className="mb-3 h-6 w-6 text-primary" />
+            <h3 className="mb-2 font-serif text-xl text-foreground">Hoàn toàn ẩn danh</h3>
+            <p className="text-base text-muted-foreground">
+              Không đăng ký, không lưu gì cả. Chỉ có bạn và cuộc trò chuyện này.
+            </p>
+          </div>
+          <div className="rounded-2xl bg-calm-sage p-6 shadow-card">
+            <BookOpen className="mb-3 h-6 w-6 text-primary" />
+            <h3 className="mb-2 font-serif text-xl text-foreground">Tài nguyên hữu ích</h3>
+            <p className="text-base text-muted-foreground">
+              Bài tập thở, kỹ thuật thư giãn giúp bạn thấy nhẹ nhàng hơn.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote */}
+      <section className="relative overflow-hidden bg-calm-lavender/50 px-4 py-12 text-center">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -right-10 top-0 h-40 w-40 rounded-full bg-calm-blue/30 blur-2xl" />
+          <div className="absolute -left-10 bottom-0 h-32 w-32 rounded-full bg-warm-peach/30 blur-2xl" />
+        </div>
+        <blockquote className="relative mx-auto max-w-lg">
+          <p className="font-serif text-2xl italic text-foreground sm:text-3xl">
+            "Bạn dũng cảm hơn bạn nghĩ, mạnh mẽ hơn bạn tưởng, và được yêu thương nhiều hơn bạn biết."
+          </p>
+          <footer className="mt-4 text-sm text-muted-foreground">— A.A. Milne</footer>
+        </blockquote>
+      </section>
+
+      {/* Authors / Footer */}
+      <footer className="border-t bg-card px-4 py-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-4 flex items-center justify-center gap-2 text-muted-foreground">
+            <Users className="h-4 w-4" />
+            <span className="text-sm font-medium">Nhóm tác giả</span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <span className="text-sm font-medium text-foreground">Võ Nguyễn Cao Trí</span>
+            <span className="hidden text-muted-foreground sm:inline">·</span>
+            <span className="text-sm font-medium text-foreground">Huỳnh Ngọc Huyền</span>
+            <span className="hidden text-muted-foreground sm:inline">·</span>
+            <span className="text-sm font-medium text-foreground">Bùi Quang Hưng</span>
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground">
+            "Bạn ổn không?" — Được tạo với 💙 để không ai phải đối mặt một mình.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
